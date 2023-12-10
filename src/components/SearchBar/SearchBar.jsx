@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { useAppContext } from '../../AppContext.jsx';
 
-const SearchBar = ({ onSearch, placeholder = 'Search for books...' }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const SearchBar = ({ onSearch, placeholder = 'Пошук книги...' }) => {
+  //const [searchTerm, setSearchTerm] = useState('');
+  const { searchTerm, updateSearchTerm } = useAppContext();
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-    onSearch(searchTerm);
+  const handleSearch = (event) => {
+    updateSearchTerm(event.target.value);
   };
+
+  // const handleChange = (event) => {
+  //   setSearchTerm(event.target.value);
+  //   onSearch(searchTerm);
+  // };
+  // console.log(searchTerm);
 
   return (
     <div className="relative rounded-lg shadow-md bg-cover" style={{ backgroundImage: `url("path/to/background_image.jpg")` }}>
@@ -15,7 +21,7 @@ const SearchBar = ({ onSearch, placeholder = 'Search for books...' }) => {
         type="text"
         placeholder={placeholder}
         value={searchTerm}
-        onChange={handleChange}
+        onChange={handleSearch}
         className="rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 w-full"
       />
       <span className="absolute top-0 right-0 px-4 py-2 text-gray-500 cursor-pointer">

@@ -1,6 +1,10 @@
 import { createContext, useContext, useState } from 'react';
 
-const AppContext = createContext();
+const AppContext = createContext({
+  minLength: 5, // Default minimum length
+  maxLength: 50, // Default maximum length
+  currentLength: 0, // Current length
+});
 
 export const useAppContext = () => {
   return useContext(AppContext);

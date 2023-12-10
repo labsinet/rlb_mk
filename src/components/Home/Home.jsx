@@ -2,18 +2,19 @@ import "./Home.css"
 
 import React, { useState, useEffect } from 'react'
 import Navbar from '../Navbar/Navbar.jsx'
-import Input from '../Input/Input.jsx'
-import BookList from '../BookList/BookList.jsx'
+//import Input from '../Input/Input.jsx'
+//import BookList from '../BookList/BookList.jsx'
 import BooksGroup from "../BooksGroup/BooksGroup.jsx"
 import SearchBar from "../SearchBar/SearchBar.jsx"
+import { useAppContext } from '../../AppContext.jsx';
 
 
 const Home = () => {
     // The useState() is imported so we can dynamically change or update the heading when a book name is typed in the input field.
-    const [term, setTerm] = useState('Anything') 
-    const [books, setBooks] = useState([]);
-    const [ data, setData ] = useState([]);
-    const [error, serError] = useState("");
+    // const [term, setTerm] = useState('Anything') 
+    // const [books, setBooks] = useState([]);
+    // const [ data, setData ] = useState([]);
+    // const [error, serError] = useState("");
     
     const booksArray = [
       { id: 0, title: 'Default Book', author: 'Author', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702103057/book_wegkbh.jpg' },
@@ -23,28 +24,32 @@ const Home = () => {
       { id: 4, title: 'AI', author: 'Google', coverUrl: '' },
       { id: 5, title: 'Мавка.Берегиня лісу', author: 'mavka.ua', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702104180/mavka_suq8fx.png' },
     ];
+
+    
+    
     const [filteredBooks, setFilteredBooks] = useState(booksArray);
       
-    useEffect(() => {
-        fetch(`localhost:5000/books/v1/volumes q=${term}&key=${import.meta.env.VITE_SOME_VALUE}`)
-          .then((res) => {
-            return res.json();
-          })
-          .then((data) => {
-            setData(data.items);
-          })
-          .catch((err) => {
-            setError(err.message);
-          });
-      }, []);
+    // useEffect(() => {
+    //     fetch(`localhost:5000/books/v1/volumes q=${term}&key=${import.meta.env.VITE_SOME_VALUE}`)
+    //       .then((res) => {
+    //         return res.json();
+    //       })
+    //       .then((data) => {
+    //         setData(data.items);
+    //       })
+    //       .catch((err) => {
+    //         setError(err.message);
+    //       });
+    //   }, []);
 
       const handleSearch = (searchTerm) => {
         const filtered = booksArray.filter((book) =>
           book.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
+        //console.log(filtered);
         setFilteredBooks(filtered);
       };
-//console.log(searchTerm);
+     
     return (
       <div className="sticky top-0">
         <SearchBar onSearch={handleSearch} />
@@ -55,8 +60,8 @@ const Home = () => {
               Читання є актом цивілізації; це один із найвидатніших актів цивілізації, тому що він бере безкоштовний сировинний матеріал розуму та будує замки можливостей.
             </p>
             <BooksGroup booksArray={booksArray}/>
-            <BookList books={books} />
-            <Input />
+            
+            
           </div>
         </div>
       </div>

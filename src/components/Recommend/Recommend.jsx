@@ -2,9 +2,15 @@ import Navbar from "../Navbar/Navbar"
 
 const Recommend = () => {
   return (
-    <div>
-    <Navbar /> 
-    <div>Recommend</div>
+    <div className="w-full" >
+    <Navbar />
+
+   
+   <div className="flex flex-wrap justify-center gap-4">
+                            
+                
+            
+    </div>
     </div>
   )
 }
