@@ -22,13 +22,16 @@ const genreArray = [
 const Genre = () => {
   
     return (
-        <div className="flex flex-wrap justify-center gap-4">
-   <Navbar />     
-   
-      {genreArray.map((genre) => (
-        <GenreItem key={genre.id} title={genre.title}  />
-      ))}
-    
+       <div>
+        <Navbar /> 
+       
+       <div className="flex flex-wrap justify-center gap-4">
+                                
+                    {genreArray.map((genre) => (
+                    <GenreItem key={genre.id} title={genre.title}  />
+                    ))}
+                
+        </div>
         </div>
   )
 }

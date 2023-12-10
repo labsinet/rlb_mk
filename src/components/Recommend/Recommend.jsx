@@ -1,8 +1,11 @@
-import React from 'react'
+import Navbar from "../Navbar/Navbar"
 
 const Recommend = () => {
   return (
+    <div>
+    <Navbar /> 
     <div>Recommend</div>
+    </div>
   )
 }
 

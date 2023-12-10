@@ -8,6 +8,7 @@ import BookList from './components/BookList/BookList'
 import { AppProvider } from './AppContext.jsx';
 import About from './components/About/About.jsx'
 import Genre from './components/Genre/Genre.jsx'
+import Recommend from './components/Recommend/Recommend.jsx'
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -22,6 +23,7 @@ function App() {
         <Route path='bookslist' element={<BookList />} />        
         <Route path='about' element={<About />} />
         <Route path='genre' element={<Genre />} />        
+        <Route path='r' element={<Recommend />} />        
         <Route path='*' element={<NotFound/>} />
       </Routes>
       
