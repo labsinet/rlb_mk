@@ -33,7 +33,7 @@ const Navbar = () => {
           <a href="#" className="text-white">Рекомендації</a>
         </li>
         <li>
-          <a href="#" className="text-white">Жанри</a>
+          <a href="/genre" className="text-white">Жанри</a>
         </li>
         <li>
           <a href="/about" className="text-white">Про...</a>
@@ -66,7 +66,7 @@ const Navbar = () => {
               <a href="#" className="text-white">Рекомендації</a>
             </li>
             <li>
-              <a href="#" className="text-white">Жанри</a>
+              <a href="/genre" className="text-white">Жанри</a>
             </li>
             <li>
               <a href="/about" className="text-white">Про...</a>
