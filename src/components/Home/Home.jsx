@@ -7,23 +7,34 @@ import Navbar from '../Navbar/Navbar.jsx'
 import BooksGroup from "../BooksGroup/BooksGroup.jsx"
 import SearchBar from "../SearchBar/SearchBar.jsx"
 import { useAppContext } from '../../AppContext.jsx';
-
+import {
+  getBooks as getBooksFromApi,
+  } from "../../api/services.js";
 
 const Home = () => {
+  const [booksArray, setBooksArray] = useState([]);
+  useEffect(() => {
+    getBooks();
+  }, []);
+
+  const getBooks = async () => {
+    const books = await getBooksFromApi();
+    setBooksArray(books);
+  };
     // The useState() is imported so we can dynamically change or update the heading when a book name is typed in the input field.
     // const [term, setTerm] = useState('Anything') 
     // const [books, setBooks] = useState([]);
     // const [ data, setData ] = useState([]);
     // const [error, serError] = useState("");
     
-    const booksArray = [
-      { id: 0, title: 'Default Book', author: 'Author', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702103057/book_wegkbh.jpg' },
-      { id: 1, title: 'The Lord of the Rings', author: 'J. R. R. Tolkien', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702100636/LordOfRing_hxjv6l.jpg' },
-      { id: 2, title: 'The Hitchhiker\'s Guide to the Galaxy', author: 'Douglas Adams', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702104764/hitchhikerGalaxyBig_-_Copy_apodbh.jpg' },
-      { id: 3, title: '1984', author: 'George Orwell', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702104526/1984_k5hrxi.jpg' },
-      { id: 4, title: 'AI', author: 'Google', coverUrl: '' },
-      { id: 5, title: 'Мавка.Берегиня лісу', author: 'mavka.ua', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702104180/mavka_suq8fx.png' },
-    ];
+    // const booksArray = [
+    //   { id: 0, title: 'Default Book', author: 'Author', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702103057/book_wegkbh.jpg' },
+    //   { id: 1, title: 'The Lord of the Rings', author: 'J. R. R. Tolkien', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702100636/LordOfRing_hxjv6l.jpg' },
+    //   { id: 2, title: 'The Hitchhiker\'s Guide to the Galaxy', author: 'Douglas Adams', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702104764/hitchhikerGalaxyBig_-_Copy_apodbh.jpg' },
+    //   { id: 3, title: '1984', author: 'George Orwell', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702104526/1984_k5hrxi.jpg' },
+    //   { id: 4, title: 'AI', author: 'Google', coverUrl: '' },
+    //   { id: 5, title: 'Мавка.Берегиня лісу', author: 'mavka.ua', coverUrl: 'https://res.cloudinary.com/dw0g20ti8/image/upload/v1702104180/mavka_suq8fx.png' },
+    // ];
 
     
     
