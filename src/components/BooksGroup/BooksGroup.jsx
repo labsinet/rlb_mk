@@ -4,7 +4,7 @@ import { useAppContext } from '../../AppContext.jsx';
 
 const BooksGroup = ({ booksArray }) => {
   const { searchTerm, filters } = useAppContext();
-console.log(booksArray);
+//console.log(booksArray);
   // Function to check if a book matches the search term and filters
   const isBookMatching = (book) => {
     // Check if the book title or author includes the search term
