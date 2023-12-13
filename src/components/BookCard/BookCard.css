@@ -1,0 +1,5 @@
+.fixed-size-image {
+    width: 100%; /* або будь-який інший фіксований розмір */
+    height: 274px;
+    object-fit: cover; /* або object-fill: contain; */
+  }

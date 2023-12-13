@@ -4,7 +4,7 @@ import { useAppContext } from '../../AppContext.jsx';
 
 const BooksGroup = ({ booksArray }) => {
   const { searchTerm, filters } = useAppContext();
-
+console.log(booksArray);
   // Function to check if a book matches the search term and filters
   const isBookMatching = (book) => {
     // Check if the book title or author includes the search term
@@ -26,7 +26,8 @@ const BooksGroup = ({ booksArray }) => {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       {filteredBooks.map((book) => (
-        <BookCard key={book.id} title={book.title} author={book.author} coverUrl={book.coverUrl} />
+        <BookCard key={book.id} title={book.title} author={book.author} image={book.image} tags={book.tags} published
+={book.published} pages={book.pages} rating={book.rating}        />
       ))}
     </div>
   );

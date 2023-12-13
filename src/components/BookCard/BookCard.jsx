@@ -20,36 +20,21 @@ import BookInfo from '../BookInfo/BookInfo.jsx';
 //  initTE({ Modal, Ripple });
   
 
-const BookCard = ({ title, author, coverUrl , onCardClick }) => {
-//    const [isModalOpen, setIsModalOpen] = useState(false);
-//    const [showModal, setShowModal] = useState(false);
+const BookCard = ({ title, author, image ,tags, published, pages, rating,  onCardClick }) => {
     const [open, setOpen] = useState(false);
  
   const handleOpen = () => setOpen(!open);
     const handleCardClick = () => {
         handleOpen();
-      //setIsModalOpen(true);
-    //   setShowModal(true);
-    //    if (!isModalOpen) {
-    //     setShowModal(true);
-    //     setIsModalOpen(true);
-        
-    // }
-      
-      
-    //  onCardClick({ title, author });
     };
+ 
   
-    // const handleModalClose = () => {
-    //   setIsModalOpen(false);
-    // };
-  
-    if (coverUrl=="") coverUrl="https://res.cloudinary.com/dw0g20ti8/image/upload/v1702103057/book_wegkbh.jpg"
+    if (image=="" || image==null) image="https://res.cloudinary.com/dw0g20ti8/image/upload/v1702103057/book_wegkbh.jpg"
 
 return ( 
 
     <div className="w-full md:w-1/3 lg:w-1/4 p-4 rounded-lg shadow-md bg-white hover:shadow-xl" onClick={handleCardClick}>
-    <img src={coverUrl} alt={title} className="w-full h-auto rounded-lg mb-2 shadow-xl dark:shadow-gray-800" />
+    <img src={image} alt={title} className="w-full h-auto rounded-lg mb-2 shadow-xl dark:shadow-gray-800 fixed-size-image" />
     <div className='flex flex-col h-full'>
        <h3 className="text-xl font-bold text-gray-800 mb-1">{title}</h3>
        <p className="text-base text-gray-500">{author}</p>
@@ -61,7 +46,7 @@ return (
        <Dialog open={open} handler={handleOpen}>
         <DialogHeader>Про книгу</DialogHeader>
         <DialogBody>
-          <BookInfo title={title} author={author} />
+          <BookInfo title={title} author={author} tags={tags} published={published} pages={pages} rating={rating} />
         </DialogBody>
         <DialogFooter>
           <Button

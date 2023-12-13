@@ -1,0 +1,8 @@
+{
+books:[
+    [{"id":"25", "title":"Зелена миля", "author":"Стівен Кінг", "published":1996, "image":nil, "genre_id":5, "created_at":"2020-12-11T00:00:00.000Z", "updated_at":"2020-12-11T00:00:00.000Z", "isbn":nil, "tags":"Любов і трагедія", "pages":592, "rating":9.5}], 
+    [{"id":36, "title":"Дев'ять історій", "author":"Джером К. Джером", "published":1908, "image":nil, "genre_id":5, "created_at":"2020-12-11T00:00:00.000Z", "updated_at":"2020-12-11T00:00:00.000Z", "isbn":nil, "tags":"Любов і трагедія", "pages":500, "rating":8.9}], 
+    [{"id":4, "title":"Ромео і Джульєтта", "author":"Вільям Шекспір", "published":2012, "image":"", "genre_id":4, "created_at":"2020-11-28T22:30:28.277Z", "updated_at":"2020-11-28T22:30:28.277Z", "isbn":nil, "tags":"Любов і ненависть", "pages":2336, "rating":8.9}], 
+    [{"id":31, "title":"Повернення Шерлока Холмса", "author":"Артур Конан Дойл", "published":1905, "image":nil, "genre_id":5, "created_at":"2020-12-11T00:00:00.000Z", "updated_at":"2020-12-11T00:00:00.000Z", "isbn":nil, "tags":"Любов і трагедія", "pages":389, "rating":8.3}]
+]
+}

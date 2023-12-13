@@ -60,7 +60,7 @@ const Home = () => {
         //console.log(filtered);
         setFilteredBooks(filtered);
       };
-     
+      
     return (
       <div className="sticky top-0">
         <SearchBar onSearch={handleSearch} />
