@@ -11,6 +11,7 @@ import {
 //import React  from 'react';
 //import Modal from 'react-modal'; 
 import BookInfo from '../BookInfo/BookInfo.jsx';
+import LikeCounter from "../LikeCounter/LikeCounter.jsx";
 // import {
 //     Modal,
 //     Ripple,
@@ -38,6 +39,7 @@ return (
     <div className='flex flex-col h-full'>
        <h3 className="text-xl font-bold text-gray-800 mb-1">{title}</h3>
        <p className="text-base text-gray-500">{author}</p>
+       <LikeCounter likes={rating} />
     </div>
        
 
@@ -57,8 +59,14 @@ return (
           >
             <span>Закрити</span>
           </Button>
+          <Button variant="gradient" color="red" onClick={handleOpen} disabled>
+            <span>Рекомендувати</span>
+          </Button>
           <Button variant="gradient" color="blue" onClick={handleOpen} disabled>
-            <span>Читати</span>
+            <span>Знайти подібне</span>
+          </Button>
+          <Button variant="gradient" color="green" onClick={handleOpen} disabled>
+            <span>Прочитано</span>
           </Button>
         </DialogFooter>
       </Dialog>

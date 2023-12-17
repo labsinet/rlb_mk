@@ -8,6 +8,7 @@ export default {
         secondaryc: '#CDB99C',
         white: '#FFFFFF',
         bgc: '#300000',
+        darkred: '#99154B',
       },
     },
   },
